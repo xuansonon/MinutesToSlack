@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minutes PDF to Slack</title>
+    <meta charset="utf-8"/>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+     <link href="https://fonts.googleapis.com/css?family=Heebo|Palanquin" rel="stylesheet">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="animate.js"></script>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <h1>Minutes PDF Generator to Slack <img src="jsPDF.png"><img src="slack.png"></h1>
+      <p>
+        Are you always the minute taker at every meeting? Getting tired of having to recreating documents and templates?
+        Sick of styling the document? Minutes PDF will automate all of that for you. All you need to do is to give some
+        information such as meeting details and meeting content. Once that is done, you can either choose to save the file
+        to a PDF format or you can send it to your Slack channel.
+      </p>
+      <section id="minutesPDF">
+        <div class="header" id="minutesHeader">
+          <h2><i class="material-icons" id="minuteArrows">chevron_right</i>&nbsp;Minutes to PDF</h2>
+        </div>
+        <div class="content collapse" id="minutesContent">
+          <form>
+            <fieldset>
+              <legend>Meeting Information</legend>
+              <p>Company Name:<br/><input type="text" class="input" name="companyName" placeholder="Example Company"/></p>
+              <p>Meeting Venue:<br/><input type="text" class="input" name="meetingVenue" placeholder="90 Example Street, City, Australia"/></p>
+              <p>Meeting Date:<br/><input type="text" class="timeInput" name="meetingDate" placeholder="Monday, Janurary 1 2017"/> or <input type="button" class="inputBTN" value="Use today's date" onclick="minutes.getTodaysDate()"/></p>
+              <p>Start time:<br/><input type="text" class="timeInput" name="meetingStart" placeholder="HH:MM AM/PM"/> or <input type="button" name="startMeetingButton" onclick="minutes.startMeeting()" class="inputBTN" value="Start Meeting Now"></p>
+              <p>End time:<br/><input type="text" class="timeInput" name="meetingEnd" placeholder="HH:MM AM/PM"/> or <input type="button" name="endMeetingButton" class="inputBTN" onclick="minutes.endMeeting()" value="End Meeting Now"></p>
+              <p>Meeting duration:<br/><input type="text" class="input" name="meetingDuration" placeholder="23 minutes and 3 seconds"/></p>
+            </fieldset>
+            <fieldset>
+              <legend>Participants and Apologies</legend>
+              <p>Participants:<br/><textarea id="participants" class="input"  placeholder="Example: John Smith"></textarea></p>
+              <p>Apologies:<br/><textarea id="apologies" class="input" placeholder="Example: Jane Smith"></textarea></p>
+            </fieldset>
+            <fieldset>
+              <legend>Minute Contents</legend>
+              <p>General Items/Discussion:<br/><textarea id="general" class="input" placeholder="General items or discussion items here"></textarea></p>
+              <p>Actions:<br/><textarea id="actions" class="input" placeholder="Actions are entered here"></textarea></p>
+              <p>Decisions:<br/><textarea id="decisions" class="input" placeholder="Decisions are entered here"></textarea></p>
+              <input type="button" class="inputBTN" onclick="minutes.createPDF()" value="Save as PDF"/>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+      <section id="slackMail">
+        <div class="header" id="slackHeader">
+          <h2><i class="material-icons" id="slackArrows">chevron_right</i>&nbsp;Upload Minutes to Slack</h2>
+        </div>
+        <div class="content collapse" id="minutesContent">
+          <form action="https://slack.com/api/files.upload?" method="post" enctype="multipart/form-data">
+            <fieldset>
+              <legend>Slack Details</legend>
+              <p>Slack Token:<br/><input type="text" class="input" name="token" placeholder="xxxx-xxxxxxxxx-xxxx"/><br/><span id="generate-token">Click <a href="#">here</a> to generate a Slack Token.</span></p>
+              <p>Channel to send to:<br/><input type="text" class="input" name="channels" placeholder="example-channel"/></p>
+            </fieldset>
+            <fieldset>
+              <legend>File Details</legend>
+              <p>Title:<br/><input type="text" class="input" name="title" placeholder="File name"/></p>
+              <p>File:<br/><input type="file" class="input" name="file"/></p>
+              <p>Additional Comments:<br/><input type="text" class="input" name="initial_comment" placeholder="Addtional comments"/></p>
+              <input type="submit" class="inputBTN" value="Send files to Slack"/>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script src="minutes.js"></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+body {
+  background-color: #FBFBFB;
+  font-family: Palanquin;
+}
+
+.page-wrapper {
+  padding: 10px 20px 20px 20px;
+  background-color: white;
+  width: 960px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+h1, h2 {
+  font-family: Heebo;
+}
+
+img {
+  float: right;
+  height: 30px;
+  filter: grayscale(100);
+}
+
+.header {
+  background-color: rgba(39, 174, 96,0.4);
+  border-bottom: 1px solid #565656;
+  transition: 0.4s all;
+}
+
+.inputBTN {
+  background-color: #27ae60;
+  border: 0px solid black;
+  width: 150px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header > h2 {
+  padding: 10px;
+  margin: 0;
+}
+
+section {
+  border: 1px solid #565656;
+}
+section:last-child {
+  border-top: 0px solid black;
+}
+
+.collapse {
+  display: none;
+}
+
+.header:hover {
+  background: rgba(39, 174, 96,0.8);
+}
+
+#minuteArrows, #slackArrows {
+  transition: 0.1s all
+}
+
+p {
+  width: 100%;
+}
+
+p > .input {
+  font-family: arial;
+  padding: 10px 0 10px 10px;
+  font-size: 0.8em;
+  width: 98%;
+}
+
+textarea {
+  min-height: 70px;
+}
+
+#generate-token {
+  color: #A8A8A8;
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.timeInput {
+  padding: 10px 10px 10px 10px;
+  font-size: 0.8em;
+}
+
+fieldset {
+  border: 0;
+}
+
+fieldset p:first-child {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+legend {
+  font-size: 1.3em;
+  font-weight: bold;
+}
