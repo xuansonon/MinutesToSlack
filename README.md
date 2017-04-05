@@ -29,5 +29,5 @@ Slack files.upload API - <a>https://api.slack.com/methods/files.upload</a><br/>
 Slack's Bot Integration - <a>https://api.slack.com/bot-users</a><br/>
 Slack token generator - <a>https://api.slack.com/custom-integrations/legacy-tokens</a><br/>
 <br/>
-***Final Notes***
+***Final Notes***<br/>
 jsPDF, by default, saves documents in A4 format. So if you would like a different size, please change as desired in the source code (minutes.js). Also, an example PDF has been upload for those who are curious to see what the generated document looks like.
