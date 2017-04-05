@@ -8,6 +8,8 @@ After discovering Slack's file.upload API, the simple form POST method was imple
 <br />
 <br />
 ***Using Minute To Slack***<br/>
+Friendly Start page where everything is neatly folded (collapsed). Click to expand!<br/>
+<img src="http://i.imgur.com/Wwd4TaW.png"/><br/><br>
 Minutes<br/>
 <img src="http://i.imgur.com/DdPcbdU.png"/>
 <br/><br/>
