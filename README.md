@@ -16,8 +16,6 @@ Uploading to Slack<br/>
 <br/><br/>
 If you would like to demo this interface, feel free to clone this repository (you will be missing some resources - simple images), or you can demo it on my site at: <a>http://www.xuansonon.com/projects/minutestoslack</a>.
 <br/><br/>
-Example PDF generated<br/>
-
 
 ***Still to do***
 - [ ] Instead of saving file and then re-uploading, find a way to automate.
